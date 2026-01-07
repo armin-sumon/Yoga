@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Pranayam</title>
+    <style>
+
+     * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #1f2b1f, #0c120c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #2a3a2a;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #a0b0a0;
+}
+
+.forgot {
+    display: block;
+    margin-bottom: 30px;
+    color: blue;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2cff00;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #25e600;
+}
+
+.logo {
+    position: fixed;
+    top:20px;
+    left: 20px;
+    color: white;
+}
+
+.profile {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+    </style>
+</head>
+<body>
+<div class="logo">
+    <div class="profile">Pranayam</div>
+</div>
+<div class="container">
+    <h1>Welcome Back</h1>
+
+    <input type="email" placeholder="p*****1@gmail.com" > <!--padmin1@gmail.com pass:12345678-->
+    <input type="password" placeholder="Enter Password" >
+
+    <a href="index.html" class="forgot">Forgot Password?</a>
+    <a href="dashboard.html">
+        <button>Login</button>
+    </a>
+</div>
+</body>
+</html>

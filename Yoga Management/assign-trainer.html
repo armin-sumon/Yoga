@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Assign Trainers</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #0b120b;
+        color: white;
+    }
+
+    .container {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+    width: 220px;
+    background: linear-gradient(#162716, #0b120b);
+    padding: 20px;
+    }
+
+    .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    }
+
+    .profile img {
+    border-radius: 50%;
+    }
+
+    .sidebar a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    color: #cddccd;
+    text-decoration: none;
+    font-size: 14px;
+    }
+
+    .sidebar a.active {
+    background: #1f3a1f;
+    color: white;
+    font-weight: bold;
+    }
+
+    .main {
+        flex: 1;
+        padding: 30px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .btn {
+        background: #2ecc71;
+        color: #000;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .form-box {
+        max-width: 420px;
+        margin-bottom: 30px;
+    }
+
+    .form-box h3 {
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        background: #132613;
+        border: 1px solid #2a5c2a;
+        border-radius: 6px;
+        color: #fff;
+    }
+
+    .form-group input::placeholder {
+        color: #9fa9a0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #0f1f0f;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #1f3d1f;
+    }
+
+    th {
+        background: #132613;
+        color: #9fe3b2;
+        font-weight: 600;
+    }
+
+    td {
+        color: #e2e2e2;
+    }
+
+    .edit {
+        color: #2ecc71;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    tr:hover {
+        background: #162d16;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="profile">
+            <img src="https://i.pravatar.cc/40" alt="">
+        <span>Pranayam</span>
+        </div>
+
+        <!--<nav class="menu">-->
+            <a href="dashboard.html">Dashboard</a>
+            <a href="add-member.html">Add member</a>
+            <a href="add-trainer.html">Add trainer</a>
+            <a href="assign-trainer.html" class="active">Assign trainer</a>
+            <a href="logout.html">Logout</a>
+        <!--</nav>-->
+    </aside>
+
+    <main class="main">
+
+        <div class="header">
+            <h1>Assign Trainers</h1>
+            <button class="btn">Add Trainer</button>
+        </div>
+
+        <div class="form-box">
+            <h3>Add New Trainer</h3>
+
+            <div class="form-group">
+                <input type="text" placeholder="Enter trainer's name">
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="Enter member name">
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="Enter trainer's specialization">
+            </div>
+
+            <button class="btn">Add Trainer</button>
+            
+        </div>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Specialization</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Elma</td>
+                    <td>elma@example.com</td>
+                    <td>Hatha Yoga</td>
+                    <td class="edit">Edit</td>
+                </tr>
+                <tr>
+                    <td>David Lee</td>
+                    <td>david.lee@example.com</td>
+                    <td>Vinyasa Flow</td>
+                    <td class="edit">Edit</td>
+                </tr>
+                <tr>
+                    <td>Sarah Jones</td>
+                    <td>sarah.jones@example.com</td>
+                    <td>Ashtanga Yoga</td>
+                    <td class="edit">Edit</td>
+                </tr>
+                <tr>
+                    <td>Michael Brown</td>
+                    <td>michael.brown@example.com</td>
+                    <td>Yin Yoga</td>
+                    <td class="edit">Edit</td>
+                </tr>
+                <tr>
+                    <td>Jessica Wilson</td>
+                    <td>jessica.wilson@example.com</td>
+                    <td>Restorative Yoga</td>
+                    <td class="edit">Edit</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+</div>
+
+</body>
+</html>

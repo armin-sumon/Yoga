@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Trainer</title>
+    <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b120b;
+    color: white;
+    display: flex;
+}
+
+.sidebar {
+    width: 220px;
+    background: linear-gradient(#162716, #0b120b);
+    padding: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.profile img {
+    border-radius: 50%;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    color: #cddccd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sidebar a.active {
+    background: #1f3a1f;
+    color: white;
+    font-weight: bold;
+}
+
+.main {
+    flex: 1;
+    padding: 30px 50px;
+}
+
+.subtitle {
+    color: #9aa89a;
+    margin-bottom: 20px;
+}
+
+.form-box {
+    max-width: 500px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    margin-top: 15px;
+    color: #b7c7b7;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #2a3a2a;
+    color: white;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #2cff00;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #25e600;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="profile">
+        <img src="https://i.pravatar.cc/40" alt="">
+        <span>Pranayam</span>
+    </div>
+
+    <a href="dashboard.html">Dashboard</a>
+    <a href="add-member.html">Add member</a>
+    <a class="active">Add trainer</a>
+    <a href="assign-trainer.html">Assign trainer</a>
+    <a href="logout.html">Logout</a>
+</div>
+
+<div class="main">
+    <h1>Trainer Management</h1>
+    <p class="subtitle">Add New Trainer</p>
+
+    <div class="form-box">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter trainer's full name">
+
+        <label>Age</label>
+        <input type="number" placeholder="Enter trainer's age">
+
+        <label>Gender</label>
+        <select>
+            <option>Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Contact Number</label>
+        <input type="text" placeholder="Enter contact number">
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter email address">
+
+        <label>Current Weight (kg)</label>
+        <input type="number" placeholder="Enter current weight">
+
+        <label>Fitness Level</label>
+        <select>
+            <option>Select fitness level</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+        </select>
+
+        <div class="btn-area">
+            <button>Add Trainer</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
