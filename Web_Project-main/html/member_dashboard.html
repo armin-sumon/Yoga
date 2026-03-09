@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Dashboard - Pranayom</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #121712;
+      /* Very dark green/black */
+      color: white;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #0d110d;
+      padding: 30px 20px;
+      border-right: 1px solid #222;
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 50px;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .user-name {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .menu-item:hover,
+    .menu-item.active {
+      background-color: #1f261f;
+      color: white;
+    }
+
+    .icon {
+      width: 20px;
+      text-align: center;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 40px 60px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    /* Cards Layout */
+    .content-section {
+      margin-bottom: 50px;
+    }
+
+    .card-row {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .info-card {
+      background-color: #1a201a;
+      /* Slightly lighter than body */
+      border-radius: 12px;
+      padding: 0;
+      /* Padding handled inside or flexible */
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      justify-content: space-between;
+    }
+
+    .card-text {
+      padding: 30px;
+      flex: 1;
+    }
+
+    .card-text h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card-text p {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 20px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-view {
+      background-color: #2a352a;
+      color: white;
+    }
+
+    .btn-download {
+      background-color: #00d26a;
+      color: black;
+      /* Or white depending on contrast */
+      color: #003300;
+    }
+
+    .card-image {
+      width: 250px;
+      background-color: #ffe0b2;
+      position: relative;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Forms */
+    .progress-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 800px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input-group label {
+      font-size: 13px;
+      color: #eee;
+    }
+
+    .custom-input {
+      background-color: #1f261f;
+      border: 1px solid #333;
+      padding: 15px;
+      border-radius: 5px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .custom-input::placeholder {
+      color: #666;
+    }
+
+    .progress-actions {
+      grid-column: span 2;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .btn-large {
+      padding: 12px 30px;
+      font-size: 14px;
+    }
+
+    .account-settings {
+      margin-top: 50px;
+    }
+
+    /* Rating Styles */
+    .rating-stars {
+      display: flex;
+      gap: 5px;
+      font-size: 30px;
+      color: #555;
+      cursor: pointer;
+      margin: 15px 0;
+    }
+
+    .rating-stars span.active {
+      color: #ffd700;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="user-profile" onclick="location.href='member_profile.html'" style="cursor: pointer">
+      <div class="avatar">
+        <!-- Using a random female face placeholder logic if needed, or just a generic image -->
+        <img src="../images/IMG_1543.JPG" alt="" style="background-color: #ccc" />
+      </div>
+      <div class="user-name">Afia</div>
+    </div>
+
+    <div class="menu">
+      <a href="#" class="menu-item active">
+        <span class="icon">🏠</span> Dashboard
+      </a>
+      <a href="member_classes.html" class="menu-item">
+        <span class="icon">📅</span> Classes
+      </a>
+      <a href="member_routines.html" class="menu-item">
+        <span class="icon">🧘</span> Routines
+      </a>
+      <a href="member_diet.html" class="menu-item">
+        <span class="icon">🥗</span> Diet
+      </a>
+      <a href="member_progress.html" class="menu-item">
+        <span class="icon">📈</span> Progress
+      </a>
+      <a href="member_chat.html" class="menu-item">
+        <span class="icon">💬</span> Chat
+      </a>
+      <a href="index.html" class="menu-item" style="margin-top: 50px">
+        <span class="icon">🚪</span> Logout
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Welcome back, Elma</h1>
+
+    <!-- Content Sections -->
+    <div class="content-section">
+      <h2>Today's Routine</h2>
+      <div class="info-card">
+        <div class="card-text">
+          <h3>Yoga Flow</h3>
+          <p>A gentle flow to start your day with energy and focus.</p>
+          <div class="buttons">
+            <button class="btn btn-view" onclick="alert('Viewing Routine...')">
+              View
+            </button>
+            <button class="btn btn-download" onclick="alert('Downloading Routine...')">
+              Download
+            </button>
+          </div>
+        </div>
+        <div class="card-image" style="background-color: #ffe0b2">
+          <!-- Yoga Illustration Placeholder -->
+          <img src="../images/pregnant-woman-holding-fitness-mat.jpg" alt="Yoga" />
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Diet Plan</h2>
+      <div class="info-card">
+        <div class="card-text">
+          <h3>Balanced Diet for the Week</h3>
+          <p>
+            A diet plan designed to complement your yoga practice and fitness
+            goals.
+          </p>
+          <div class="buttons">
+            <button class="btn btn-view" onclick="alert('Viewing Diet Plan...')">
+              View
+            </button>
+            <button class="btn btn-download" onclick="alert('Downloading Diet Plan...')">
+              Download
+            </button>
+          </div>
+        </div>
+        <div class="card-image" style="background-color: #cfe8fc">
+          <!-- Food Image Placeholder -->
+          <img src="../images/interior-design-yoga-space.jpg" alt="Diet" />
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Track Your Progress</h2>
+      <div class="progress-grid">
+        <div class="input-group">
+          <label>Weight (lbs)</label>
+          <input type="text" class="custom-input" placeholder="Enter weight" />
+        </div>
+        <div class="input-group">
+          <label>Heart Rate (bpm)</label>
+          <input type="text" class="custom-input" placeholder="Enter heart rate" />
+        </div>
+        <div class="input-group">
+          <label>Sleep (hours)</label>
+          <input type="text" class="custom-input" placeholder="Enter sleep hours" />
+        </div>
+        <div class="input-group">
+          <label>Mood</label>
+          <input type="text" class="custom-input" placeholder="Select mood" />
+        </div>
+        <div class="progress-actions">
+          <button class="btn btn-download btn-large" onclick="alert('Progress Logged!')">
+            Log Progress
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Rate Your Experience</h2>
+      <div class="card-row">
+        <!-- Rate App -->
+        <div class="info-card" style="flex-direction: column; padding: 30px; align-items: center; text-align: center;">
+          <h3>Rate the App</h3>
+          <p style="margin-bottom: 10px;">How is your experience with the app?</p>
+          <div class="rating-stars" id="app_stars" data-selected="0">
+            <span data-value="1" onclick="selectStars('app_stars',1)">★</span>
+            <span data-value="2" onclick="selectStars('app_stars',2)">★</span>
+            <span data-value="3" onclick="selectStars('app_stars',3)">★</span>
+            <span data-value="4" onclick="selectStars('app_stars',4)">★</span>
+            <span data-value="5" onclick="selectStars('app_stars',5)">★</span>
+          </div>
+          <p id="app_msg" style="color: #00d26a; font-size: 12px; height: 18px;"></p>
+          <button class="btn btn-download" style="margin-top:10px" onclick="submitRating('app')">Submit App Rating</button>
+        </div>
+
+        <!-- Rate Trainer -->
+        <div class="info-card" style="flex-direction: column; padding: 30px; align-items: center; text-align: center;">
+          <h3>Rate Trainer</h3>
+          <p style="margin-bottom: 10px;">How is your trainer performing?</p>
+          <div class="rating-stars" id="trainer_stars" data-selected="0">
+            <span data-value="1" onclick="selectStars('trainer_stars',1)">★</span>
+            <span data-value="2" onclick="selectStars('trainer_stars',2)">★</span>
+            <span data-value="3" onclick="selectStars('trainer_stars',3)">★</span>
+            <span data-value="4" onclick="selectStars('trainer_stars',4)">★</span>
+            <span data-value="5" onclick="selectStars('trainer_stars',5)">★</span>
+          </div>
+          <p id="trainer_msg" style="color: #00d26a; font-size: 12px; height: 18px;"></p>
+          <div style="width:100%; margin-top:12px;">
+            <label for="trainer_comment" style="display:block; text-align:left; color:#ddd; font-size:13px; margin-bottom:6px;">Leave a comment for your trainer</label>
+            <textarea id="trainer_comment" placeholder="Write your feedback..." style="width:100%; background:#1f261f; border:1px solid #333; color:#fff; padding:10px; border-radius:6px; min-height:80px;"></textarea>
+            <div style="text-align:right; margin-top:8px;"><button class="btn btn-download" onclick="submitRating('trainer')">Submit Trainer Rating</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function selectStars(containerId, value) {
+        var container = document.getElementById(containerId);
+        container.setAttribute('data-selected', value);
+        var spans = container.querySelectorAll('span');
+        spans.forEach(function (s) {
+          var v = parseInt(s.getAttribute('data-value'), 10);
+          if (v <= value) s.classList.add('active'); else s.classList.remove('active');
+        });
+      }
+
+      function submitRating(type) {
+        if (type === 'app') {
+          var app = document.getElementById('app_stars');
+          var val = app.getAttribute('data-selected') || 0;
+          if (val == 0) { alert('Please select an app rating first.'); return; }
+          document.getElementById('app_msg').textContent = 'Thanks for rating the app: ' + val + '★';
+          alert('App rating submitted: ' + val + ' stars');
+        } else if (type === 'trainer') {
+          var t = document.getElementById('trainer_stars');
+          var val = t.getAttribute('data-selected') || 0;
+          var comment = document.getElementById('trainer_comment').value || '';
+          if (val == 0) { alert('Please select a trainer rating first.'); return; }
+          document.getElementById('trainer_msg').textContent = 'Thanks for rating the trainer: ' + val + '★';
+          alert('Trainer rating submitted: ' + val + ' stars. Comment: ' + comment);
+          document.getElementById('trainer_comment').value = '';
+        }
+      }
+    </script>
+
+    <div class="account-settings">
+      <h2>Account Settings</h2>
+      <button class="btn btn-view btn-large" onclick="location.href='member_profile.html'">
+        Edit Account Info
+      </button>
+    </div>
+  </div>
+  <script>
+    function submitRating(type, value) {
+      const container = document.getElementById(type + '_stars');
+      const stars = container.getElementsByTagName('span');
+      const msg = document.getElementById(type + '_msg');
+
+      // Update visual stars
+      for (let i = 0; i < stars.length; i++) {
+        if (i < value) {
+          stars[i].classList.add('active');
+        } else {
+          stars[i].classList.remove('active');
+        }
+      }
+
+      // Show message
+      msg.innerText = "Thanks for rating! (" + value + "/5)";
+    }
+  </script>
+</body>
+
+</html>

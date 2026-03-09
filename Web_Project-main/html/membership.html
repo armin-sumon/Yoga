@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans - Pranayom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Membership Page Specific Styles */
+        .page-header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .btn-choose {
+            width: 100%;
+            padding: 10px;
+            background-color: #eee;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .non-member-section {
+            text-align: center;
+            padding: 50px;
+        }
+        
+        .non-member-section h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContent">
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="logo">
+                <h3><a href="index.html">Pranayom</a></h3>
+            </div>
+            <div class="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="membership.html">Membership Plans</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </div>
+            <button class="btn-login" onclick="window.location.href='login.html'">Login</button>
+        </div>
+
+        <div class="secBox">
+            <div style="text-align: center; padding: 50px;">
+                <h1>Membership Plans</h1>
+                <p>Find the perfect plan to suit your yoga journey.</p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="pricing-container">
+                <!-- Monthly -->
+                <div class="pricing-card">
+                    <h3>Monthly</h3>
+                    <div class="price">1500 <span style="font-size: 14px; font-weight: normal;">/month</span></div>
+                    <button class="btn-choose">Choose Plan</button>
+                    <ul style="text-align: left; list-style: none; margin-top: 20px;">
+                        <li>✓ Unlimited classes</li>
+                        <li>✓ Access to all class types</li>
+                    </ul>
+                </div>
+                <!-- Annual -->
+                <div class="pricing-card">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #00d26a; color: white; padding: 5px; border-radius: 10px; font-size: 10px;">Best Value</div>
+                    <h3>Annual</h3>
+                    <div class="price">10000 <span style="font-size: 14px; font-weight: normal;">/year</span></div>
+                    <button class="btn-choose">Choose Plan</button>
+                    <ul style="text-align: left; list-style: none; margin-top: 20px;">
+                        <li>✓ Unlimited classes</li>
+                        <li>✓ Access to all class types</li>
+                    </ul>
+                </div>
+                <!-- Class Pack -->
+                <div class="pricing-card">
+                    <h3>Class Pack</h3>
+                    <div class="price">450 <span style="font-size: 14px; font-weight: normal;">/10 classes</span></div>
+                    <button class="btn-choose">Choose Plan</button>
+                    <ul style="text-align: left; list-style: none; margin-top: 20px;">
+                        <li>✓ 10 Classes</li>
+                        <li>✓ Valid for 3 months</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Non-Member Pricing -->
+            <div class="non-member-section">
+                <h2>Non-Member Pricing</h2>
+                <div class="pricing-card" style="margin: 0 auto; width: 100%; max-width: 400px;">
+                    <h3>Drop-In Class</h3>
+                    <div class="price">50 <span style="font-size: 14px; font-weight: normal;">/class</span></div>
+                    <button class="btn-choose">Book Now</button>
+                    <ul style="text-align: left; list-style: none; margin-top: 20px;">
+                        <li>✓ Single class access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <span><a href="policy.html" style="color: white; text-decoration: none;">Privacy Policy</a></span>
+                <span><a href="terms.html" style="color: white; text-decoration: none;"></a>Terms of Service</a></span>
+                <span><a href="contact.html" style="color: white; text-decoration: none">Contact Us</a></span>
+            </div>
+            <p>@2024 Pranayom. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
