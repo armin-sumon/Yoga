@@ -1,2 +1,3 @@
 # Yoga
 Yoga Management
+Pranayom is a Yoga Management System designed to simplify the administration of yoga centers. The platform allows administrators to efficiently manage trainers, members, and their exercise schedules in one place. It provides an organized way to store trainer information, register members, and assign personalized workout or yoga routines. The system helps improve coordination between trainers and members while maintaining a structured schedule. Pranayom aims to make yoga center management more efficient, user-friendly, and well organized through a simple digital solution.
